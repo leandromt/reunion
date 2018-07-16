@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-$bg-color: #efefef;
+$bg-color: #000;
+$fg-color: #fff;
 
 body {
 	background: $bg-color;
+	color: $fg-color;
 }

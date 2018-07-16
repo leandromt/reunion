@@ -6,11 +6,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "devstart": "nodemon ./bin/www",
+    "startdev": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "build": "webpack",
-    "startbuild": "webpack --watch --ignore-deprecation"
+    "build": "webpack --mode production",
+    "builddev": "webpack --watch --ignore-deprecation --mode development"
   },
   "repository": {
     "type": "git",
