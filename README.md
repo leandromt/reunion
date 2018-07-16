@@ -1,0 +1,1 @@
+SET DEBUG=reunion_node:* & npm start
