@@ -12,13 +12,37 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.scss$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: ['css-loader', 'sass-loader']
-			})
+			use: [
+				"style-loader", // creates style nodes from JS strings
+				"css-loader", // translates CSS into CommonJS
+				"sass-loader" // compiles Sass to CSS
+            ]
+			//use: ['css-loader', 'sass-loader']
+			// use: ExtractTextPlugin.extract({
+			// 	fallback: 'style-loader',
+			// 	use: [{
+			// 		loader: 'css-loader',
+			// 		options: {
+			// 			// If you are having trouble with urls not resolving add this setting.
+			// 			// See https://github.com/webpack-contrib/css-loader#url
+			// 			sourceMap: false,
+			// 			discardComments: { removeAll: true }
+			// 		}
+			// 	}, 
+			// 	{
+			// 		loader: 'sass-loader',
+			// 		options: {
+			// 			sourceMap: false,
+			// 			discardComments: { removeAll: true }
+			// 		}
+			// 	}]
+			// })
 		}]
 	},
 	plugins: [
-		new ExtractTextPlugin('style.css')
+		new ExtractTextPlugin({
+			ignoreOrder: false,
+			filename: 'style.css'
+		})
 	]
 };
